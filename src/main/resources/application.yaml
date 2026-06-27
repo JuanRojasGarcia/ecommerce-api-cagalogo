@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: ecommerce-api-catalog
+
+  # Configuración de PostgreSQL
+  datasource:
+    url: jdbc:postgresql://localhost:5433/ecommerce_db
+    username: developer
+    password: devpassword
+    driver-class-name: org.postgresql.Driver
+
+  # Configuración de JPA / Hibernate
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update  # Crea/actualiza las tablas automáticamente en desarrollo
+    show-sql: true      # Imprime las consultas en consola para debugear
+    properties:
+      hibernate:
+        format_sql: true
+
+  # Configuración de Redis para el Carrito
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+# Configuración de Actuator para CI/CD (Jenkins)
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
