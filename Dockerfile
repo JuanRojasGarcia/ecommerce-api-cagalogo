@@ -1,5 +1,5 @@
 # 1. Usamos una imagen de OpenJDK 25 (ajustado a tu versión)
-FROM openjdk:25-jdk-slim
+FROM eclipse-temurin:25-jdk-jammy
 
 # 2. Buenas prácticas DevSecOps: Actualizar dependencias del SO base
 RUN apt-get update && apt-get upgrade -y && rm -rf /var/lib/apt/lists/*
