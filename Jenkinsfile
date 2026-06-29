@@ -59,6 +59,7 @@ pipeline {
             steps {
                 echo 'Desplegando la API localmente conectada a la base de datos...'
                 sh """
+                    docker network inspect ${DOCKER_NETWORK} >/dev/null 2>&1 || docker network create ${DOCKER_NETWORK}
                     docker stop ${APP_NAME}-container || true
                     docker rm ${APP_NAME}-container || true
                     docker run -d \
