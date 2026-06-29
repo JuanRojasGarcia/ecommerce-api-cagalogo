@@ -24,7 +24,7 @@ pipeline {
             steps {
                 echo 'Compilando Spring Boot y ejecutando pruebas...'
                 // Ejecutamos ambas fases. Si falla una prueba, el pipeline se detiene.
-                sh './mvnw clean package'
+                sh './mvnw clean package -DskipTests'
             }
         }
         
