@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        jdk 'Java-25'
+    }
+
     // Definimos variables globales para no repetir código
     environment {
         APP_NAME = 'ecommerce-api-catalog'
