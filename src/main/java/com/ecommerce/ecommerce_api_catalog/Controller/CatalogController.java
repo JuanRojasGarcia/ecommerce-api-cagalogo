@@ -21,7 +21,7 @@ public class CatalogController {
 
     @GetMapping("/status")
     public ResponseEntity<String> checkStatus() {
-        return ResponseEntity.ok("Catalog API v1 is up");
+        return ResponseEntity.ok("Catalog API v1 is up prueba");
     }
 
     // Endpoint real para listar productos
